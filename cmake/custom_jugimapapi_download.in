@@ -5,7 +5,6 @@ project(jugimapapi-download NONE)
 include(ExternalProject)
 ExternalProject_Add(jugimapapi
 	GIT_REPOSITORY    https://github.com/Jugilus/JugiMapAPI.git
-	GIT_TAG           "origin/develop"
 	GIT_SHALLOW       TRUE
 	SOURCE_DIR        "${CMAKE_BINARY_DIR}/jugimapapi-src"
 	CONFIGURE_COMMAND ""

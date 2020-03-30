@@ -20,8 +20,6 @@ set(PACKAGE_SOURCES
 	src/engineIndependent/various.h
 	src/engineIndependent/various.cpp
 
-	src/jugimap/jmBinaryLoader.cpp
-	src/jugimap/jmBinaryLoader.h
 	src/jugimap/jmCamera.cpp
 	src/jugimap/jmCamera.h
 	src/jugimap/jmCollision.cpp
@@ -38,6 +36,8 @@ set(PACKAGE_SOURCES
 	src/jugimap/jmGlobal.h
 	src/jugimap/jmLayers.cpp
 	src/jugimap/jmLayers.h
+	src/jugimap/jmMapBinaryLoader.cpp
+	src/jugimap/jmMapBinaryLoader.h
 	src/jugimap/jmMap.cpp
 	src/jugimap/jmMap.h
 	src/jugimap/jmObjectFactory.cpp
@@ -49,6 +49,8 @@ set(PACKAGE_SOURCES
 	src/jugimap/jmSourceGraphics.h
 	src/jugimap/jmSprites.cpp
 	src/jugimap/jmSprites.h
+	src/jugimap/jmStreams.cpp
+	src/jugimap/jmStreams.h
 	src/jugimap/jmText.cpp
 	src/jugimap/jmText.h
 	src/jugimap/jmTween.cpp
