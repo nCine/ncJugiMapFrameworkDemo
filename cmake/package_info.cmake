@@ -1,104 +1,118 @@
-set(PACKAGE_NAME "ncJugiMapAPIDemo")
-set(PACKAGE_EXE_NAME "ncjugimapapidemo")
+set(PACKAGE_NAME "ncJugiMapFrameworkDemo")
+set(PACKAGE_EXE_NAME "ncjugimap_frameworkdemo")
 set(PACKAGE_VENDOR "Jugilus")
 set(PACKAGE_COPYRIGHT "Copyright ©2019-2020 ${PACKAGE_VENDOR}")
-set(PACKAGE_DESCRIPTION "A nCine port of the JugiMap API Demo test by Jugilus")
+set(PACKAGE_DESCRIPTION "A nCine port of the JugiMap Framework Demo by Jugilus")
 set(PACKAGE_HOMEPAGE "http://jugimap.com")
-set(PACKAGE_REVERSE_DNS "com.jugimap.apidemo.ncine")
+set(PACKAGE_REVERSE_DNS "com.jugimap.frameworkdemo.ncine")
 
 set(PACKAGE_INCLUDE_DIRS src/)
 
 set(PACKAGE_SOURCES
-	src/engineIndependent/entities.h
-	src/engineIndependent/entities.cpp
-	src/engineIndependent/platformerScene.h
-	src/engineIndependent/platformerScene.cpp
-	src/engineIndependent/shapesDrawingLayer.h
-	src/engineIndependent/shapesDrawingLayer.cpp
-	src/engineIndependent/tileGrid.h
-	src/engineIndependent/tileGrid.cpp
-	src/engineIndependent/various.h
-	src/engineIndependent/various.cpp
+	src/jugiApp/app.h
+	src/jugiApp/app.cpp
+	src/jugiApp/entities.h
+	src/jugiApp/entities.cpp
+	src/jugiApp/scene.h
+	src/jugiApp/scene.cpp
+	src/jugiApp/shapesDrawingLayer.h
+	src/jugiApp/shapesDrawingLayer.cpp
+	src/jugiApp/tileGrid.h
+	src/jugiApp/tileGrid.cpp
+	src/jugiApp/various.h
+	src/jugiApp/various.cpp
 
 	src/jugimap/jmAnimationCommon.h
 	src/jugimap/jmAnimationCommon.cpp
-	src/jugimap/jmCamera.cpp
+	src/jugimap/jmApp.h
+	src/jugimap/jmApp.cpp
 	src/jugimap/jmCamera.h
-	src/jugimap/jmCollision.cpp
+	src/jugimap/jmCamera.cpp
 	src/jugimap/jmCollision.h
-	src/jugimap/jmCommon.cpp
-	src/jugimap/jmCommonFunctions.cpp
-	src/jugimap/jmCommonFunctions.h
+	src/jugimap/jmCollision.cpp
+	src/jugimap/jmColor.h
+	src/jugimap/jmColor.cpp
 	src/jugimap/jmCommon.h
-	src/jugimap/jmDrawing.cpp
+	src/jugimap/jmCommon.cpp
+	src/jugimap/jmCommonFunctions.h
+	src/jugimap/jmCommonFunctions.cpp
 	src/jugimap/jmDrawing.h
-	src/jugimap/jmFrameAnimation.cpp
+	src/jugimap/jmDrawing.cpp
+	src/jugimap/jmFont.h
+	src/jugimap/jmFont.cpp
 	src/jugimap/jmFrameAnimation.h
-	src/jugimap/jmGlobal.cpp
+	src/jugimap/jmFrameAnimation.cpp
 	src/jugimap/jmGlobal.h
-	src/jugimap/jmLayers.cpp
+	src/jugimap/jmGlobal.cpp
+	src/jugimap/jmGuiCommon.h
+	src/jugimap/jmGuiCommon.cpp
+	src/jugimap/jmGuiText.h
+	src/jugimap/jmGuiText.cpp
+	src/jugimap/jmGuiTextWidgets.h
+	src/jugimap/jmGuiTextWidgets.cpp
+	src/jugimap/jmGuiWidgetsA.h
+	src/jugimap/jmGuiWidgetsA.cpp
+	src/jugimap/jmInput.h
+	src/jugimap/jmInput.cpp
 	src/jugimap/jmLayers.h
-	src/jugimap/jmMapBinaryLoader.cpp
+	src/jugimap/jmLayers.cpp
 	src/jugimap/jmMapBinaryLoader.h
-	src/jugimap/jmMap.cpp
+	src/jugimap/jmMapBinaryLoader.cpp
 	src/jugimap/jmMap.h
-	src/jugimap/jmObjectFactory.cpp
+	src/jugimap/jmMap.cpp
 	src/jugimap/jmObjectFactory.h
+	src/jugimap/jmObjectFactory.cpp
 	src/jugimap/jmScene.h
-	src/jugimap/jmSceneManager.cpp
-	src/jugimap/jmSceneManager.h
-	src/jugimap/jmSourceGraphics.cpp
+	src/jugimap/jmScene.cpp
 	src/jugimap/jmSourceGraphics.h
-	src/jugimap/jmSprites.cpp
+	src/jugimap/jmSourceGraphics.cpp
 	src/jugimap/jmSprites.h
-	src/jugimap/jmStreams.cpp
+	src/jugimap/jmSprites.cpp
 	src/jugimap/jmStreams.h
-	src/jugimap/jmText.cpp
-	src/jugimap/jmText.h
+	src/jugimap/jmStreams.cpp
 	src/jugimap/jmTimelineAnimation.h
 	src/jugimap/jmTimelineAnimation.cpp
 	src/jugimap/jmTimelineAnimationInstance.h
 	src/jugimap/jmTimelineAnimationInstance.cpp
-	src/jugimap/jmTween.cpp
-	src/jugimap/jmTween.h
-	src/jugimap/jmUtilities.cpp
 	src/jugimap/jmUtilities.h
-	src/jugimap/jmVectorShapes.cpp
+	src/jugimap/jmUtilities.cpp
 	src/jugimap/jmVectorShapes.h
-	src/jugimap/jmVectorShapesUtilities.cpp
+	src/jugimap/jmVectorShapes.cpp
 	src/jugimap/jmVectorShapesUtilities.h
+	src/jugimap/jmVectorShapesUtilities.cpp
 	src/jugimap/jugimap.h
 
 	src/jugimapNCINE/jmNCine.h
 	src/jugimapNCINE/jmNCine.cpp
 
+	src/jugiAppNCINE.h
+	src/jugiAppNCINE.cpp
 	src/main.h
 	src/main.cpp
-	src/sceneNCINE.h
-	src/sceneNCINE.cpp
 )
 
 function(callback_start)
 	if(NOT CMAKE_SYSTEM_NAME STREQUAL "Android")
-		include(custom_jugimapapi)
-		set(JUGIMAPAPI_SRC "${CMAKE_BINARY_DIR}/jugimapapi-src")
-		set(JUGIMAPAPI_DEST "${CMAKE_SOURCE_DIR}/src")
-		if(IS_DIRECTORY ${JUGIMAPAPI_SRC})
-			file(COPY ${JUGIMAPAPI_SRC}/api_c++/jugimap DESTINATION ${JUGIMAPAPI_DEST})
-			file(COPY ${JUGIMAPAPI_SRC}/api_c++/jugimapNCINE DESTINATION ${JUGIMAPAPI_DEST})
-			file(COPY ${JUGIMAPAPI_SRC}/examples_c++/ApiDemoTest/engineIndependent DESTINATION ${JUGIMAPAPI_DEST})
-			file(COPY ${JUGIMAPAPI_SRC}/examples_c++/ApiDemoTest/ApiDemoTest_nCine/ DESTINATION ${JUGIMAPAPI_DEST})
+		include(custom_jugimap_framework)
+		set(JUGIMAP_FRAMEWORK_SRC "${CMAKE_BINARY_DIR}/jugimap_framework-src")
+		set(JUGIMAP_FRAMEWORK_DEST "${CMAKE_SOURCE_DIR}/src")
+		if(IS_DIRECTORY ${JUGIMAP_FRAMEWORK_SRC})
+			file(COPY ${JUGIMAP_FRAMEWORK_SRC}/framework_c++/jugimap DESTINATION ${JUGIMAP_FRAMEWORK_DEST})
+			file(COPY ${JUGIMAP_FRAMEWORK_SRC}/framework_c++/jugimapNCINE DESTINATION ${JUGIMAP_FRAMEWORK_DEST})
+			file(COPY ${JUGIMAP_FRAMEWORK_SRC}/framework_c++/utf8cpp DESTINATION ${JUGIMAP_FRAMEWORK_DEST})
+			file(COPY ${JUGIMAP_FRAMEWORK_SRC}/examples_c++/FrameworkDemo/jugiApp DESTINATION ${JUGIMAP_FRAMEWORK_DEST})
+			file(COPY ${JUGIMAP_FRAMEWORK_SRC}/examples_c++/FrameworkDemo/FrameworkDemo_nCine/ DESTINATION ${JUGIMAP_FRAMEWORK_DEST})
 		endif()
 	endif()
 endfunction()
 
 function(callback_before_target)
 	if(NOT CMAKE_SYSTEM_NAME STREQUAL "Android" AND IS_DIRECTORY ${PACKAGE_DATA_DIR})
-		set(JUGIMAPAPI_SRC "${CMAKE_BINARY_DIR}/jugimapapi-src")
-		if(IS_DIRECTORY ${JUGIMAPAPI_SRC})
-			file(COPY ${JUGIMAPAPI_SRC}/examples_c++/ApiDemoTest/media/fonts DESTINATION ${PACKAGE_DATA_DIR}/data/media)
-			file(COPY ${JUGIMAPAPI_SRC}/examples_c++/ApiDemoTest/media/graphics DESTINATION ${PACKAGE_DATA_DIR}/data/media)
-			file(COPY ${JUGIMAPAPI_SRC}/examples_c++/ApiDemoTest/media/maps DESTINATION ${PACKAGE_DATA_DIR}/data/media)
+		set(JUGIMAP_FRAMEWORK_SRC "${CMAKE_BINARY_DIR}/jugimap_framework-src")
+		if(IS_DIRECTORY ${JUGIMAP_FRAMEWORK_SRC})
+			file(COPY ${JUGIMAP_FRAMEWORK_SRC}/examples_c++/FrameworkDemo/media/fonts DESTINATION ${PACKAGE_DATA_DIR}/data/media)
+			file(COPY ${JUGIMAP_FRAMEWORK_SRC}/examples_c++/FrameworkDemo/media/graphics DESTINATION ${PACKAGE_DATA_DIR}/data/media)
+			file(COPY ${JUGIMAP_FRAMEWORK_SRC}/examples_c++/FrameworkDemo/media/maps DESTINATION ${PACKAGE_DATA_DIR}/data/media)
 		endif()
 
 		file(GLOB MEDIA_FONTS RELATIVE ${PACKAGE_DATA_DIR} ${PACKAGE_DATA_DIR}/data/media/fonts/*)
