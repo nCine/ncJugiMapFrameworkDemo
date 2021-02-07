@@ -1,7 +1,7 @@
 set(PACKAGE_NAME "ncJugiMapFrameworkDemo")
 set(PACKAGE_EXE_NAME "ncjugimap_frameworkdemo")
 set(PACKAGE_VENDOR "Jugilus")
-set(PACKAGE_COPYRIGHT "Copyright ©2019-2020 ${PACKAGE_VENDOR}")
+set(PACKAGE_COPYRIGHT "Copyright ©2019-2021 ${PACKAGE_VENDOR}")
 set(PACKAGE_DESCRIPTION "A nCine port of the JugiMap Framework Demo by Jugilus")
 set(PACKAGE_HOMEPAGE "http://jugimap.com")
 set(PACKAGE_REVERSE_DNS "com.jugimap.frameworkdemo.ncine")
